@@ -2,12 +2,18 @@
 
 An MCP server for creating draft replies to unread emails via Gmail API
 
-##  Prerequisites
+## Overview
+
+This MCP server was designed to be run locally with Claude Desktop. It extends the LLM's capabilities by providing the following additional abilities:
+- Retrieving the latest `n` unread emails from the authenticated Gmail inbox
+- Creating draft replies for an email in Gmail given the relevant `email_id`
+
+## Setup
+
+###  Prerequisites
 
 - Credentials for a Google Cloud project with Gmail API access
 - Claude Desktop installed locally
-
-## Setup
 
 ### Environment Variables
 - Clone the `.env.example` into a fresh `.env` file
