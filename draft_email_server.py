@@ -109,7 +109,6 @@ async def create_draft_reply(email_id: str, reply_body: str):
         message["Subject"] = "Re: " + original_email["subject"]
         message["In-Reply-To"] = email_id
 
-        # encoded message
         encoded_message = base64.urlsafe_b64encode(message.as_bytes()).decode()
 
         create_message = {"message": {"raw": encoded_message, "threadId": original_email["thread_id"]}}
@@ -120,7 +119,7 @@ async def create_draft_reply(email_id: str, reply_body: str):
             .execute()
         )
 
-        return f'Draft id: {draft["id"]}\nDraft message: {draft["message"]}'
+        return {"draft_id": draft["id"], "draft_message": draft["message"]}
 
     except HttpError as error:
         print(f"An error occurred: {error}")
@@ -143,13 +142,14 @@ async def handle_list_tools() -> list[types.Tool]:
         ),
         types.Tool(
             name="get_unread_emails",
-            description="Get a list of unread emails",
+            description="Get a list of the latest unread emails",
             inputSchema={
                 "type": "object",
                 "properties": {
                     "limit": {
                         "type": "integer",
                         "description": "Maximum number of unread emails to retrieve",
+                        "default": 5,
                     },
                 },
                 "required": [],
