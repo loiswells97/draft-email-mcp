@@ -7,6 +7,7 @@ An MCP server for creating draft replies to unread emails via Gmail API
 This MCP server was designed to be run locally with Claude Desktop. It extends the LLM's capabilities by providing the following additional abilities:
 - Retrieving the latest `n` unread emails from the authenticated Gmail inbox
 - Creating draft replies for an email in Gmail given the relevant `email_id`
+- Retrieving a local email style guide file
 
 ## Setup
 
@@ -20,6 +21,7 @@ This MCP server was designed to be run locally with Claude Desktop. It extends t
 - Download the `credentials.json` file for your Google Cloud project and place it in a convenient location
 - Set the `GOOGLE_CREDENTIALS_PATH` in the `.env` to point to your `credentials.json` file
 - Set the `GOOGLE_TOKEN_PATH` to desired location for the `token.json`. This needs to be a writable directory, as the token file will be created when the server authenticates with Google Auth.
+- If providing a local email style guide, set the `EMAIL_STYLE_GUIDE_PATH` variable to the location of the style guide. See `example_email_style_guide.md` for an example style guide.
 
 ### Setting up `claude_desktop_config.json`
 - Locate the `claude_desktop_config.json`:
@@ -54,12 +56,19 @@ This accepts a `limit` argument that defaults to `5` to ensure the tool is resil
 
 This accepts the `email_id` of the original email and the `reply_body` as strings and creates this draft in the relevant thread in Gmail. It returns the `draft_id` and `draft_message` of the created draft in JSON format.
 
+### get_style_guide
+
+This retrieves the content of the style guide at `EMAIL_STYLE_GUIDE_PATH` to enable Claude to write better emails.
+
 ## Demo
+
+This demo was run using `example_email_style_guide.md` as the style guide.
 
 ### Example prompts
 
 - `Summarise my last unread email`
 - `Create draft replies for my latest 3 unread emails`
+- `Get my email style guide`
 
 ### Screenshots
 
