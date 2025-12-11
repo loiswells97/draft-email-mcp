@@ -1,6 +1,6 @@
 # draft-email-mcp
 
-An MCP server for creating draft replies to unread emails via Gmail API
+An MCP server for retrieving unread emails and creating draft replies via Gmail API
 
 ## Overview
 
