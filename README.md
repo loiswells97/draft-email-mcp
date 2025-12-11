@@ -21,7 +21,7 @@ This MCP server was designed to be run locally with Claude Desktop. It extends t
 - Download the `credentials.json` file for your Google Cloud project and place it in a convenient location
 - Set the `GOOGLE_CREDENTIALS_PATH` in the `.env` to point to your `credentials.json` file
 - Set the `GOOGLE_TOKEN_PATH` to desired location for the `token.json`. This needs to be a writable directory, as the token file will be created when the server authenticates with Google Auth.
-- If providing a local email style guide, set the `EMAIL_STYLE_GUIDE_PATH` variable to the location of the style guide. See `example_email_style_guide.md` for an example style guide.
+- If providing a local email style guide, set the `EMAIL_STYLE_GUIDE_PATH` variable to the location of the style guide. See [`example_email_style_guide.md`](https://github.com/loiswells97/draft-email-mcp/blob/main/example_email_style_guide.md) for an example style guide.
 
 ### Setting up `claude_desktop_config.json`
 - Locate the `claude_desktop_config.json`:
@@ -62,7 +62,7 @@ This retrieves the content of the style guide at `EMAIL_STYLE_GUIDE_PATH` to ena
 
 ## Demo
 
-This demo was run using `example_email_style_guide.md` as the style guide.
+This demo was run using [`example_email_style_guide.md`](https://github.com/loiswells97/draft-email-mcp/blob/main/example_email_style_guide.md) as the style guide.
 
 ### Example prompts
 
