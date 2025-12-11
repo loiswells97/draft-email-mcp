@@ -59,7 +59,7 @@ This accepts the `email_id` of the original email and the `reply_body` as string
 ### Example prompts
 
 - `Summarise my last unread email`
-- `Create drafts for my latest 3 unread emails`
+- `Create draft replies for my latest 3 unread emails`
 
 ### Screenshots
 
