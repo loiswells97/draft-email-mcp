@@ -50,11 +50,11 @@ This MCP server was designed to be run locally with Claude Desktop. It extends t
 This MCP server provides the following tools:
 
 ### `get_unread_emails`
-This accepts a `limit` argument that defaults to `5` to ensure the tool is resilient to use on inboxes with a large number of unread emails. It retrieves the `id`, `sender`, `subject`, `thread_id`, `timestamp` and `snippet` of each email from the Gmail inbox and returns the result in JSON format. Though it might be better to retrieve the body of the email in some cases, the `1MB` size limit imposed by Claude Desktop means that many marketing emails containing numerous images are too large, resulting in an error.
+This accepts a `limit` argument that defaults to `5` to ensure the tool is resilient when used with inboxes that have a large number of unread emails. It retrieves the `id`, `sender`, `subject`, `thread_id`, `timestamp` and `snippet` of each email from the Gmail inbox and returns the result in JSON format. Though it might be better to retrieve the body of the email in some cases, the `1MB` size limit imposed by Claude Desktop means that many marketing emails containing numerous images are too large, resulting in an error.
 
 ### `create_draft_reply`
 
-This accepts the `email_id` of the original email and the `reply_body` as strings and creates this draft in the relevant thread in Gmail. It returns the `draft_id` and `draft_message` of the created draft in JSON format.
+This accepts the `email_id` of the original email and the `reply_body` as strings and creates the draft in the relevant thread in Gmail. It returns the `draft_id` and `draft_message` of the created draft in JSON format.
 
 ### get_style_guide
 
@@ -62,7 +62,7 @@ This retrieves the content of the style guide at `EMAIL_STYLE_GUIDE_PATH` to ena
 
 ## Demo
 
-This demo was run using [`example_email_style_guide.md`](https://github.com/loiswells97/draft-email-mcp/blob/main/example_email_style_guide.md) as the style guide.
+This demo ran using [`example_email_style_guide.md`](https://github.com/loiswells97/draft-email-mcp/blob/main/example_email_style_guide.md) as the style guide.
 
 ### Example prompts
 
