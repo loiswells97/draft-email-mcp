@@ -23,6 +23,7 @@ load_dotenv()
 SCOPES = ["https://www.googleapis.com/auth/gmail.readonly", "https://www.googleapis.com/auth/gmail.compose"]
 TOKEN_PATH = os.environ.get("GOOGLE_TOKEN_PATH", "token.json")
 CREDENTIALS_PATH = os.environ.get("GOOGLE_CREDENTIALS_PATH", "credentials.json")
+STYLE_GUIDE_PATH = os.environ.get("EMAIL_STYLE_GUIDE_PATH")
 
 server = Server("draft-email-server")
 
@@ -71,9 +72,6 @@ async def get_email(email_id: str):
     except HttpError as error:
         print(f"An error occurred: {error}")
         return None
-
-def hello_world():
-    return "Hello, World!"
 
 async def get_unread_emails(limit: int = 5):
     try:
@@ -127,19 +125,15 @@ async def create_draft_reply(email_id: str, reply_body: str):
 
     return draft
 
+def get_style_guide():
+    # if STYLE_GUIDE_PATH and os.path.exists(STYLE_GUIDE_PATH):
+    with open(STYLE_GUIDE_PATH, "r") as f:
+        return f.read()
+    
 
 @server.list_tools()
 async def handle_list_tools() -> list[types.Tool]:
     return [
-        types.Tool(
-            name="hello_world",
-            description="Say hello to the world",
-            inputSchema={
-                "type": "object",
-                "properties": {},
-                "required": [],
-            },
-        ),
         types.Tool(
             name="get_unread_emails",
             description="Get a list of the latest unread emails",
@@ -173,15 +167,21 @@ async def handle_list_tools() -> list[types.Tool]:
                 "required": ["email_id", "reply_body"],
             },
         ),
+        types.Tool(
+            name="get_style_guide",
+            description="Retrieve the email style guide for drafting replies",
+            inputSchema={
+                "type": "object",
+                "properties": {},
+                "required": [],
+            },
+        )
     ]
 
 
 @server.call_tool()
 async def handle_call_tool(name: str, arguments: dict) -> list[types.TextContent]:
-    if name == "hello_world":
-        greeting = hello_world()
-        return [types.TextContent(type="text", text=greeting)]
-    elif name == "get_unread_emails":
+    if name == "get_unread_emails":
         limit = arguments["limit"]
         emails = await get_unread_emails(limit)
         if not emails:
@@ -193,6 +193,11 @@ async def handle_call_tool(name: str, arguments: dict) -> list[types.TextContent
         reply_body = arguments["reply_body"]
         draft = await create_draft_reply(email_id, reply_body)
         return [types.TextContent(type="text", text=f"✓ Draft reply created:\n{draft}")]
+    elif name == "get_style_guide":
+        style_guide = get_style_guide()
+        if not style_guide:
+            return [types.TextContent(type="text", text="No style guide found")]
+        return [types.TextContent(type="text", text=f"✓ Style Guide:\n{style_guide}")]
     raise ValueError(f"Unknown tool: {name}")
 
 
