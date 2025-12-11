@@ -64,15 +64,16 @@ This accepts the `email_id` of the original email and the `reply_body` as string
 ### Screenshots
 
 #### Before
-<img width="1147" height="221" alt="Screenshot 2025-12-11 at 22 23 32" src="https://github.com/user-attachments/assets/89bd80d6-01ef-4704-868a-18705e380100" />
+<img width="1156" height="231" alt="Screenshot 2025-12-11 at 23 15 22" src="https://github.com/user-attachments/assets/d9c3cd14-e515-4127-81e8-f993f59ebbf2" />
+
 
 #### During
-<img width="996" height="795" alt="Screenshot 2025-12-11 at 22 26 56" src="https://github.com/user-attachments/assets/dc1ab20b-cca2-4a40-9839-a3b286ce140b" />
-<img width="750" alt="Screenshot 2025-12-11 at 22 28 56" src="https://github.com/user-attachments/assets/fed204f9-f691-49fb-aa86-5c277d303edb" />
+<img width="524" height="376" alt="Screenshot 2025-12-11 at 23 20 00" src="https://github.com/user-attachments/assets/942ef1a2-6175-465e-9945-e1f3b5b093a3" />
+<img width="523" height="681" alt="Screenshot 2025-12-11 at 23 19 02" src="https://github.com/user-attachments/assets/c6fdf9b8-3ab7-4062-a083-9f99cafdf721" />
 
 
 #### After
-<img width="1162" height="227" alt="Screenshot 2025-12-11 at 22 30 13" src="https://github.com/user-attachments/assets/fca14dde-2f04-4d3d-9225-b0f9a2654ed5" />
-<img width="1404" height="696" alt="Screenshot 2025-12-11 at 22 30 42" src="https://github.com/user-attachments/assets/2128425e-9dab-4aa6-9d03-02cf4c51badf" />
+<img width="1414" height="379" alt="Screenshot 2025-12-11 at 23 18 15" src="https://github.com/user-attachments/assets/e4187034-11a5-4fd3-9e94-94f2cb8c1459" />
+<img width="1161" height="673" alt="Screenshot 2025-12-11 at 23 18 49" src="https://github.com/user-attachments/assets/5a39281c-7d98-4f83-81eb-d8da174ac089" />
 
 
