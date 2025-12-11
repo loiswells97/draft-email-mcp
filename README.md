@@ -63,4 +63,16 @@ This accepts the `email_id` of the original email and the `reply_body` as string
 
 ### Screenshots
 
+#### Before
+<img width="1147" height="221" alt="Screenshot 2025-12-11 at 22 23 32" src="https://github.com/user-attachments/assets/89bd80d6-01ef-4704-868a-18705e380100" />
+
+#### During
+<img width="996" height="795" alt="Screenshot 2025-12-11 at 22 26 56" src="https://github.com/user-attachments/assets/dc1ab20b-cca2-4a40-9839-a3b286ce140b" />
+<img width="750" alt="Screenshot 2025-12-11 at 22 28 56" src="https://github.com/user-attachments/assets/fed204f9-f691-49fb-aa86-5c277d303edb" />
+
+
+#### After
+<img width="1162" height="227" alt="Screenshot 2025-12-11 at 22 30 13" src="https://github.com/user-attachments/assets/fca14dde-2f04-4d3d-9225-b0f9a2654ed5" />
+<img width="1404" height="696" alt="Screenshot 2025-12-11 at 22 30 42" src="https://github.com/user-attachments/assets/2128425e-9dab-4aa6-9d03-02cf4c51badf" />
+
 
